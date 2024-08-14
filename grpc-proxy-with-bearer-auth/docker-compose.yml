@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:1.27
+    environment:
+      - BEARER_TOKEN=1235
+    ports:
+      - 8082:8082
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/templates:/etc/nginx/templates:ro
